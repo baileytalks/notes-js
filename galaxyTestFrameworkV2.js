@@ -30,15 +30,22 @@
   }
 
   function fourthTest() {
-    var note1 = 'Here is a note';
-    noteList.new(note1);
-    var result = (noteList.notes[0].text === note1);
+    var note1 = { text: 'Here is a note'};
+    noteList.new('fakenote', note1);
+    var result = (noteList.notes[0] === note1);
     return ('Making a new note pushes it to the array: ' + result)
+  }
+
+  function fifthTest() {
+    var note2 = { text: 'Here is another note' };
+    noteList.new('fakenote', note2);
+    var result = (noteList.displayNotes() === "Here is a note, Here is another note");
+    return ('Displays all notes in list: ' + result)
   }
 
   exports.thirdTest = thirdTest;
   exports.fourthTest = fourthTest;
-
+  exports.fifthTest = fifthTest;
 })(this);
 
 console.log('%c-----GALAXY TEST-----', 'background: black; color: white; display: block;');
@@ -46,3 +53,4 @@ console.log(firstTest());
 console.log(secondTest());
 console.log(thirdTest());
 console.log(fourthTest());
+console.log(fifthTest());
