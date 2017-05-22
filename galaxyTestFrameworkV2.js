@@ -29,11 +29,20 @@
     return ('Note list has an array of notes: ' + result);
   }
 
+  function fourthTest() {
+    var note1 = 'Here is a note';
+    noteList.new(note1);
+    var result = (noteList.notes[0].text === note1);
+    return ('Making a new note pushes it to the array: ' + result)
+  }
+
   exports.thirdTest = thirdTest;
-  
+  exports.fourthTest = fourthTest;
+
 })(this);
 
 console.log('%c-----GALAXY TEST-----', 'background: black; color: white; display: block;');
 console.log(firstTest());
 console.log(secondTest());
 console.log(thirdTest());
+console.log(fourthTest());
