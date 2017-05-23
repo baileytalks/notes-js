@@ -23,7 +23,7 @@ RunTest.prototype.firstTest = function() {
 }
 
 RunTest.prototype.secondTest = function() {
-  var result = (this.note.textPrint() === this.string);
+  var result = (this.note.textPrint() === 'x');
   var color  = Color(result);
   console.log('%cUsing .text prints the string: ' + result, color);
 }

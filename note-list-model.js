@@ -1,18 +1,24 @@
 'use strict';
 
 function NoteList() {
-  this.notes = [];
-}
+  var notes = [];
 
-NoteList.prototype.new = function(text, fakeNote) {
-  this.notes.push(fakeNote || new Note(text));
-}
-
-NoteList.prototype.displayNotes = function() {
-  var note = 0,
-      returnArray = [];
-  for (note in this.notes) {
-    returnArray.push(this.notes[note].text);
+  var newNote = function(text, fakeNote) {
+    notes.push(fakeNote || new Note(text));
   }
-  return returnArray.join(', ');
+
+  var displayNotes = function() {
+    var note = 0,
+    returnArray = [];
+    for (note in notes) {
+      returnArray.push(notes[note].text);
+    }
+    return returnArray.join(', ');
+  }
+
+  return {
+    notes: notes,
+    newNote: newNote,
+    displayNotes: displayNotes,
+  }
 }
