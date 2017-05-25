@@ -1,10 +1,5 @@
 'use-strict';
 
-// const changeText = function(text) {
-//     var appDiv = document.getElementById('app');
-//     appDiv.innerHTML = text;
-// };
-
 function NoteController() {
   var pageHTML = function(text) {
     var noteList = new NoteList();
@@ -18,3 +13,9 @@ function NoteController() {
     pageHTML: pageHTML
   }
 };
+
+//
+// (function changeText(noteController.pageHTML) {
+//     var appDiv = document.getElementById('app');
+//     appDiv.innerHTML = text;
+// };)(this);

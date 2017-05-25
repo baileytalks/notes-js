@@ -27,5 +27,7 @@
     var fakeNoNote = [];
     sameTheyAre('Does not produce string of HTML with no note', noteListView.createHTML(fakeNoNote), htmlStringNoNotes);
 
+    var appDiv = document.getElementById('app');
+    sameTheyAre('The innerHTML property of the app element contains HTML with string', appDiv, noteController.pageHTML('string'));
 
 })();
