@@ -1,16 +1,19 @@
 'use strict';
 
 function NoteListView() {
-
-  const getHTML = function(noteList) {
+  const createHTML = function(noteList) {
     var n = 0;
     var noteArray = [];
-    for (n in noteList) {
-      noteArray.push(noteList[n].text);
+    var notes = noteList.notes;
+
+    for (n in notes) {
+      noteArray.push(notes[n].text);
     }
+
     if (noteArray.length === 0) {
       return '';
     }
+
     else {
       var noteString = noteArray.join('</div></li><li><div>');
       return ('<ul><li><div>' + noteString + '</div></li></ul>');
@@ -18,6 +21,6 @@ function NoteListView() {
   }
 
   return {
-    getHTML: getHTML,
+    createHTML: createHTML
   }
-}
+};

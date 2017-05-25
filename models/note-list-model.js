@@ -3,7 +3,7 @@
 function NoteList() {
   var notes = [];
 
-  var newNote = function(text, fakeNote) {
+  var addNote = function(text, fakeNote) {
     notes.push(fakeNote || new Note(text));
   }
 
@@ -18,7 +18,7 @@ function NoteList() {
 
   return {
     notes: notes,
-    newNote: newNote,
+    addNote: addNote,
     displayNotes: displayNotes,
   }
-}
+};
