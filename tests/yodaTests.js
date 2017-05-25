@@ -1,11 +1,12 @@
 (function(exports){
-  var string = "My favourite testing framework is from Dagobah",
-      note = new Note(string),
+  var string = "My favourite testing framework is this one",
+      note = new Note('string'),
       noteList = new NoteList();
       noteListView = new NoteListView();
+      noteController = new NoteController();
 
-    sameTheyAre('Contains a string', note.text, string)
-    sameTheyAre('Using .text prints the string', note.textPrint(), string)
+    sameTheyAre('Contains a string', note.text, 'string')
+    sameTheyAre('Using .text prints the string', note.textPrint(), 'string')
 
     var note1 = { text: 'Here is a note'};
     noteList.addNote('fakenote', note1);
@@ -25,4 +26,6 @@
     var htmlStringNoNotes = '';
     var fakeNoNote = [];
     sameTheyAre('Does not produce string of HTML with no note', noteListView.createHTML(fakeNoNote), htmlStringNoNotes);
+
+
 })();
