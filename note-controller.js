@@ -6,7 +6,10 @@ function NoteController() {
     var note = noteList.addNote(text);
     var noteListView = new NoteListView();
 
-    return noteListView.createHTML(noteList);
+    var newAppDiv = noteListView.createHTML(noteList);
+
+    var appDiv = document.getElementById('app');
+    appDiv.innerHTML = newAppDiv;
   }
 
   return {
@@ -15,7 +18,7 @@ function NoteController() {
 };
 
 //
-// (function changeText(noteController.pageHTML) {
+// function changeText(noteController.pageHTML) {
 //     var appDiv = document.getElementById('app');
 //     appDiv.innerHTML = text;
 // };)(this);
