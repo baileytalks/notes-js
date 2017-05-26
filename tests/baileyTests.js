@@ -22,6 +22,7 @@
     var noteListView = new NoteListView();
     var dummyNoteController = new DummyNoteController();
     var singleNoteView = new SingleNoteView(note);
+    var secondNote = new Note('another string');
 
     var title = 'Contains a string';
     elementsAreTheSame(title, note.text, 'string')
@@ -54,6 +55,7 @@
     elementsAreTheSame(title, noteListView.createHTML(fakeNoNote), htmlStringNoNotes);
 
     var title = 'The innerHTML property of the app element contains HTML with string';
+    // nb - the next line adds a new note! It has an id of 1 :)
     dummyNoteController.pageHTML('Favourite food: pesto');
     var appDiv = document.getElementById('app').innerHTML;
     var foodNote20char = 'Favourite food: pest';
@@ -66,4 +68,11 @@
     var fakeNoteObject = { notes: [{ text: 'Here is a note which is really really really really really long' }] };
     var expectedResult = '<ul><li><div>Here is a note which</div></li></ul>';
     elementsAreTheSame(title, noteListView.createHTML(fakeNoteObject), expectedResult)
+
+    var title = 'The first note has an id of 0';
+    elementsAreTheSame(title, note.id, 0)
+
+    var title = 'The second note has an id of 1';
+    elementsAreTheSame(title, secondNote.id, 1);
+
 })();
