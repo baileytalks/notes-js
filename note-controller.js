@@ -9,10 +9,12 @@ function NoteController() {
     var newAppDiv = noteListView.createHTML(noteList);
 
     var appDiv = document.getElementById('app');
-    appDiv.innerHTML = newAppDiv;
+    appDiv.innerHTML += newAppDiv;
   }
 
   return {
     pageHTML: pageHTML
   }
 };
+
+var newNote = new NoteController();
