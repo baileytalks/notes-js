@@ -7,7 +7,7 @@ function NoteListView() {
     var notes = noteList.notes;
 
     for (n in notes) {
-      noteArray.push(notes[n].text.substr(0, 20));
+      noteArray.push(`<a href="#${notes[n].id}">${notes[n].text.substr(0, 20)}</a>`);
     }
 
     if (noteArray.length === 0) {
