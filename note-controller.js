@@ -16,9 +16,3 @@ function NoteController() {
     pageHTML: pageHTML
   }
 };
-
-//
-// function changeText(noteController.pageHTML) {
-//     var appDiv = document.getElementById('app');
-//     appDiv.innerHTML = text;
-// };)(this);
