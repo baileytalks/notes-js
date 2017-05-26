@@ -7,7 +7,7 @@ function NoteListView() {
     var notes = noteList.notes;
 
     for (n in notes) {
-      noteArray.push(notes[n].text);
+      noteArray.push(notes[n].text.substr(0, 20));
     }
 
     if (noteArray.length === 0) {
@@ -16,7 +16,7 @@ function NoteListView() {
 
     else {
       var noteString = noteArray.join('</div></li><li><div>');
-      return ('<ul><li><div>' + noteString + '</div></li></ul>');
+      return (`<ul><li><div>${noteString}</div></li></ul>`);
     }
   }
 

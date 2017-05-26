@@ -56,10 +56,14 @@
     var title = 'The innerHTML property of the app element contains HTML with string';
     dummyNoteController.pageHTML('Favourite food: pesto');
     var appDiv = document.getElementById('app').innerHTML;
-    var foodNote = 'Favourite food: pesto';
-    elementContains(title, appDiv, foodNote);
+    var foodNote20char = 'Favourite food: pest';
+    elementContains(title, appDiv, foodNote20char);
 
     var title = 'Expects the output of single note view to include the note given to it';
     elementContains(title, singleNoteView.noteview(), 'string')
 
+    var title = 'Expect the note view to only show the first 20 characters';
+    var fakeNoteObject = { notes: [{ text: 'Here is a note which is really really really really really long' }] };
+    var expectedResult = '<ul><li><div>Here is a note which</div></li></ul>';
+    elementsAreTheSame(title, noteListView.createHTML(fakeNoteObject), expectedResult)
 })();
